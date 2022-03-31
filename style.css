@@ -2,4 +2,29 @@ div#div1{
     background-color: red;
     height: 200px;
     width: 450px;
+    top: 50% ;
+    right: 50%;
+    position: absolute;
+    transform: translate(50%, -50%);
+
 }
+
+section {
+    font: normal 14pt Arial;
+    text-align: center;
+    color: white;
+}
+
+div p2{
+    top: -10% ;
+    right: 19%;
+    position: absolute;
+    transform: translate(50%, -50%);
+    color: yellow;
+    text-align: end;
+}
+
+body{
+    background-color: black;
+}
+

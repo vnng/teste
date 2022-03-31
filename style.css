@@ -1,7 +1,7 @@
 div#div1{
     background-color: red;
     height: 200px;
-    width: 450px;
+    width: 600px;
     top: 50% ;
     right: 50%;
     position: absolute;
@@ -17,7 +17,7 @@ section {
 
 div p2{
     top: -10% ;
-    right: 19%;
+    right: 14%;
     position: absolute;
     transform: translate(50%, -50%);
     color: yellow;

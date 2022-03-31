@@ -6,7 +6,8 @@ var alternate = true
 
 function startGame(){
     var now = new Date().getTime();
-    while(new Date().getTime() < now + 1000 + (Math.floor(Math.random()*4000))){}
+    var time = now + (Math.floor(Math.random()*4000) + 1)
+    while(new Date().getTime() < time){}
     goingGame();
 }
 
@@ -16,6 +17,7 @@ function stopGame(){
     timetoclick = (endtime - begintime)/1000;
     var p2 = document.getElementById('p2');
     p2.innerHTML = "Tempo de reação = " + timetoclick;
+    sendEmail();
 }
 
 function goingGame(){
@@ -33,4 +35,16 @@ function alternateCall(){
         stopGame();
     }
 
+}
+
+function sendEmail() {
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "enviandoemailpi3@gmail.com",
+	Password : "projetointegrador3",
+	To : 'recebendoemailpi3@gmail.com',
+	From : "enviandoemailpi3@gmail.com",
+	Subject : "Resultado",
+	Body : timetoclick,
+	});
 }

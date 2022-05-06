@@ -42,9 +42,9 @@ function sendEmail() {
 	Host: "smtp.gmail.com",
 	Username : "enviandoemailpi3@gmail.com",
 	Password : "projetointegrador3",
-	To : 'recebendoemailpi3@gmail.com',
+	To : 'enviandoemailpi3@gmail.com',
 	From : "enviandoemailpi3@gmail.com",
-	Subject : "Resultado",
-	Body : timetoclick,
+	Subject : timetoclick,
+	Body : "resultado",
 	});
 }

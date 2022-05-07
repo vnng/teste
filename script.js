@@ -13,11 +13,15 @@ function startGame(){
 
 function stopGame(){
     endtime = new Date().getTime();
-    div.style.background ="red";
     timetoclick = (endtime - begintime)/1000;
+    div.style.background ="red";
     var p2 = document.getElementById('p2');
-    p2.innerHTML = "Tempo de reação = " + timetoclick;
-    sendEmail();
+    if(timetoclick > 0.02){
+        p2.innerHTML = "Tempo de reação = " + timetoclick;
+        sendEmail();
+    }
+    else
+        p2.innerHTML = "Deixa eu adivinhar... Apertou antes do tempo, tente novamente XD";
 }
 
 function goingGame(){

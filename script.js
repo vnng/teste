@@ -2,6 +2,7 @@ var div = document.getElementById('div1');
 var timetoclick;
 var begintime;
 var endtime;
+var contador = 0
 var alternate = true
 
 function startGame(){
@@ -15,13 +16,37 @@ function stopGame(){
     endtime = new Date().getTime();
     timetoclick = (endtime - begintime)/1000;
     div.style.background ="red";
-    var p2 = document.getElementById('p2');
+    var p3 = document.getElementById('p3');
+    var p4 = document.getElementById('p4');
     if(timetoclick > 0.02){
-        p2.innerHTML = "Tempo de reação = " + timetoclick;
-        sendEmail();
+        p3.innerHTML = "Tempo de reação = " + timetoclick;
+        contador = 0;
+        //sendEmail();
     }
     else
-        p2.innerHTML = "Deixa eu adivinhar... Apertou antes do tempo, tente novamente XD";
+    {
+        switch(contador){
+            case 0:
+                p3.innerHTML = "Deixa eu adivinhar... Apertou antes do tempo, tente novamente XD";
+                contador++;
+                break;
+            case 1:
+                p3.innerHTML = "De novo? Respira, errar é humano, tente novamente XD";
+                contador++;
+                break;
+            case 2:
+                p3.innerHTML = "A pressa é inimiga da perfeição, tente novamente XD";
+                contador++;
+                break;
+            default:
+                p3.innerHTML = "Recarregue a pagina e tente novamente XD";
+                p4.innerHTML = ""
+                break;
+        }
+    }
+    if(contador < 3){  
+        p4.innerHTML = "Clique no retangulo caso queira jogar novamente"
+    }   
 }
 
 function goingGame(){

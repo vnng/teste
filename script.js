@@ -21,7 +21,7 @@ function stopGame(){
     if(timetoclick > 0.02){
         p3.innerHTML = "Tempo de reação = " + timetoclick;
         contador = 0;
-        sendEmail();
+        //sendEmail();
     }
     else
     {

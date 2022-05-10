@@ -1,4 +1,3 @@
-#modules
 import imaplib
 import email
 
@@ -13,10 +12,8 @@ mail.login(username, app_password)
 
 mail.select("INBOX")
 
-#select specific mails
 _, selected_mails = mail.search(None, '(FROM "enviandoemailpi3@gmail.com")')
 
-#total number of mails from specific user
 print("Total Messages from enviandoemailpi3@gmail.com:" , len(selected_mails[0].split()))
 
 stringlist = []
@@ -25,18 +22,21 @@ for num in selected_mails[0].split():
     _, data = mail.fetch(num , '(RFC822)')
     _, bytes_data = data[0]
 
-    #convert the byte data to message
     email_message = email.message_from_bytes(bytes_data)
     stringlist.append(email_message["subject"])
 
 mail.logout()
 
-floatlist = [float(i)for i in stringlist]
+# with open('data.txt', 'w') as datafile:
+#     for item in stringlist:
+#         datafile.write("%s\n" %item)
 
+floatlist = [float(i)for i in stringlist]
 print(floatlist)
+print ("Tamanho lista = %d " % len(floatlist))
 
 soma = sum(floatlist)
 media = soma / len(floatlist)
 
-print(soma)
-print(media)
+print("Soma = %.3f " % soma)
+print("Media = %.3f " % media)

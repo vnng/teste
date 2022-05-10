@@ -21,7 +21,7 @@ function stopGame(){
     if(timetoclick > 0.02){
         p3.innerHTML = "Tempo de reação = " + timetoclick;
         contador = 0;
-        //sendEmail();
+        sendEmail();
     }
     else
     {
@@ -35,12 +35,11 @@ function stopGame(){
                 contador++;
                 break;
             case 2:
-                p3.innerHTML = "A pressa é inimiga da perfeição, tente novamente XD";
+                p3.innerHTML = "Se atente ao retangulo, ele tem que estar verde, tente novamente XD";
                 contador++;
                 break;
             default:
-                p3.innerHTML = "Recarregue a pagina e tente novamente XD";
-                p4.innerHTML = ""
+                document.location.reload(true);
                 break;
         }
     }
